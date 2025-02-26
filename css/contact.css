@@ -1,0 +1,400 @@
+/* Reseta margens e preenchimentos padrão */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo geral para o corpo e HTML */
+body,
+html {
+    width: 100%;
+    height: 100%;
+    color: white;
+    /* Cor padrão do texto */
+    font-family: "Bebas Neue", sans-serif;
+    /* Fonte personalizada */
+    font-weight: 400;
+    /* Peso da fonte */
+    font-style: normal;
+    /* Sem inclinação */
+}
+
+/* Tema Dark (padrão inicial) */
+body.dark-theme {
+    background-color: rgb(24, 23, 23);
+    /* Fundo escuro */
+    color: white;
+    /* Texto branco */
+}
+
+/* Estilo para itens ativos no tema escuro */
+body.dark-theme .about h1.active,
+body.dark-theme .nome h1.active {
+    color: white;
+    /* Cor do texto no tema escuro */
+}
+
+/* Borda para itens ativos no tema escuro */
+body.dark-theme .about h1.active::after,
+body.dark-theme .nome h1.active::after {
+    background-color: white;
+    /* Borda branca no tema escuro */
+}
+
+/* Borda ao passar o mouse no tema escuro */
+body.dark-theme .about h1:hover::after,
+body.dark-theme .nome h1:hover::after {
+    background-color: white;
+    /* Borda branca ao passar o mouse no tema escuro */
+    width: 100%;
+    /* Expande a borda */
+    transition: width 0.3s ease, background-color 0.3s ease;
+    /* Suaviza a transição */
+}
+
+body.dark-theme .header {
+    background-color: rgb(24, 23, 23);
+    /* Fundo do cabeçalho escuro */
+}
+
+body.dark-theme .background-text {
+    background-color: rgb(24, 23, 23);
+    /* Fundo da seção principal escuro */
+}
+
+body.dark-theme .title {
+    color: white;
+    /* Título principal branco */
+}
+
+body.dark-theme .subtitle {
+    color: white;
+    /* Subtítulo branco */
+}
+
+/* Tema Light */
+body.light-theme {
+    /* Fundo claro */
+    color: black;
+    /* Texto preto */
+}
+
+/* Estilo para itens ativos no tema claro */
+body.light-theme .about h1.active,
+body.light-theme .nome h1.active {
+    color: black;
+    /* Cor do texto no tema claro */
+}
+
+/* Borda para itens ativos no tema claro */
+body.light-theme .about h1.active::after,
+body.light-theme .nome h1.active::after {
+    background-color: black;
+    /* Borda preta no tema claro */
+}
+
+/* Borda ao passar o mouse no tema claro */
+body.light-theme .about h1:hover::after,
+body.light-theme .nome h1:hover::after {
+    background-color: black;
+    /* Borda preta ao passar o mouse no tema claro */
+    width: 100%;
+    /* Expande a borda */
+    transition: width 0.3s ease, background-color 0.3s ease;
+    /* Suaviza a transição */
+}
+
+
+body.light-theme .header {
+    background-color: #D2D2D2;
+    /* Fundo claro no cabeçalho */
+}
+
+body.light-theme .nome {
+    color: black;
+    /* Título principal preto */
+}
+
+body.light-theme .darkmode {
+    color: black;
+    /* Título principal preto */
+}
+
+body.light-theme .background-text {
+    background-color: #D2D2D2;
+    /* Fundo claro para a seção principal */
+}
+
+body.light-theme .title {
+    color: black;
+    /* Título principal preto */
+}
+
+body.light-theme .subtitle {
+    color: black;
+    /* Subtítulo preto */
+}
+
+/* Estilo do cabeçalho */
+.header {
+    width: 100%;
+    height: auto;
+    background-color: rgb(24, 23, 23);
+    /* Fundo padrão escuro */
+    display: flex;
+    /* Flexbox para alinhamento */
+}
+
+/* Nome do usuário no cabeçalho */
+.nome {
+    margin-right: auto;
+    /* Empurra o conteúdo para a direita */
+    padding: 2rem;
+    /* Espaçamento interno */
+    color: white;
+    /* Texto branco */
+    text-decoration: none;
+    /* Remove o sublinhado padrão do link */
+    color: inherit;
+    /* Herda a cor do elemento pai */
+    display: flex;
+    /* Mantém o alinhamento com o layout */
+}
+
+/* Contêiner para os itens do menu */
+.about {
+    margin-right: auto;
+    /* Centraliza horizontalmente */
+    margin-left: auto;
+    display: flex;
+    /* Flexbox para alinhamento horizontal */
+    padding: 2rem;
+    /* Espaçamento interno */
+    gap: 1rem;
+    /* Espaçamento entre os itens */
+}
+
+.about h1 a {
+    text-decoration: none;
+    /* Remove o sublinhado */
+    color: inherit;
+    /* Herda a cor do h1 */
+}
+
+.about h1 a:hover {
+    color: inherit;
+    /* Mantém a cor ao passar o mouse */
+}
+
+
+/* Estilo geral para os itens do menu e título */
+.about h1,
+.nome h1 {
+    position: relative;
+    /* Necessário para o pseudo-elemento (borda animada) */
+    cursor: pointer;
+    /* Mostra o cursor de clique */
+    transition: color 0.3s ease;
+    /* Transição suave para mudanças de cor */
+}
+
+/* Estilo para a borda animada (pseudo-elemento) */
+.about h1::after,
+.nome h1::after {
+    content: "";
+    /* Elemento visual vazio */
+    position: absolute;
+    /* Posição absoluta relativa ao h1 */
+    bottom: -5px;
+    /* Distância da borda ao texto */
+    left: 0;
+    /* Alinha à esquerda */
+    width: 0;
+    /* Largura inicial (borda oculta) */
+    height: 2px;
+    /* Altura da borda */
+    background-color: white;
+    /* Cor padrão da borda */
+    transition: width 0.3s ease;
+    /* Animação suave da largura */
+}
+
+/* Mostra a borda ao passar o mouse */
+.about h1:hover::after,
+.nome h1:hover::after {
+    width: 100%;
+    /* Expande a borda para a largura total */
+}
+
+/* Mantém a borda fixa ao clicar */
+.about h1.active::after,
+.nome h1.active::after {
+    width: 100%;
+    /* Borda visível */
+}
+
+/* Estilo para o texto quando ativo */
+.about h1.active,
+.nome h1.active {
+    color: white;
+    /* Garante que o texto permaneça branco */
+}
+
+/* Estilo para o botão Dark Mode */
+.darkmode {
+    display: flex;
+    /* Alinhamento horizontal */
+    margin-left: auto;
+    /* Empurra para a direita */
+    padding: 2rem;
+    /* Espaçamento interno */
+    color: white;
+    /* Texto branco */
+    gap: 1rem;
+    /* Espaçamento entre os itens */
+}
+
+.darkmode h1 {
+    position: relative;
+    /* Necessário para o pseudo-elemento */
+    cursor: pointer;
+    /* Mostra o cursor de clique */
+    transition: color 0.3s ease;
+    /* Transição suave para mudanças de cor */
+}
+
+/* Pseudo-elemento para a borda no "Dark" */
+.darkmode h1::after {
+    content: "";
+    /* Elemento visual vazio */
+    position: absolute;
+    /* Posição relativa ao título */
+    bottom: -5px;
+    /* Distância do texto */
+    left: 0;
+    /* Alinha à esquerda */
+    width: 0;
+    /* Largura inicial (borda oculta) */
+    height: 2px;
+    /* Altura da borda */
+    background-color: white;
+    /* Cor padrão da borda */
+    transition: width 0.3s ease;
+    /* Animação suave da largura */
+}
+
+/* Expande a borda no "Dark" ao passar o mouse */
+.darkmode h1:hover::after {
+    width: 100%;
+    /* Expande a borda */
+}
+
+/* Mantém a borda fixa no "Dark" quando ativo */
+.darkmode h1.dark-active::after {
+    width: 100%;
+    /* Borda visível */
+}
+
+/* Garante que o texto no "Dark" permaneça visível quando ativo */
+.darkmode h1.dark-active {
+    color: white;
+}
+
+/* Estilo do ícone da lua */
+.lua {
+    width: 2rem;
+    /* Largura do ícone */
+    height: auto;
+    /* Altura proporcional */
+}
+
+/* Estilo do fundo e texto principal */
+.background-text {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(24, 23, 23);
+}
+
+/* Contêiner para o título principal */
+.title-container {
+    text-align: center;
+    margin-bottom: auto;
+}
+
+.title {
+    margin-top: 6rem;
+    font-size: 15rem;
+    font-weight: bold;
+    color: white;
+}
+
+.texto {
+    font-size: 2rem;
+}
+
+.textoSocial {
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Alinha os elementos verticalmente */
+    gap: 0; /* Espaçamento entre o texto e a seta */
+}
+
+.arrow-down {
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+    /* Animação de pulo */
+}
+
+/* Animação da seta */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+/* Contêiner de ícones */
+.icons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    /* Espaçamento entre os ícones */
+    margin-top: 2rem;
+}
+
+/* Estilo para os links dos ícones */
+.icon-link {
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    /* Tamanho do ícone */
+    height: 5rem;
+    /* Tamanho do ícone */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito ao passar o mouse nos ícones */
+.icon-link:hover {
+    transform: scale(1.2);
+    /* Aumenta levemente o tamanho do ícone */
+}
+
+/* Estilo dos ícones */
+.contact-icon {
+    width: 70%;
+    height: 100%;
+    object-fit: contain;
+    /* Garante que o ícone se ajuste sem distorções */
+}
