@@ -1,0 +1,413 @@
+/* =========================================
+   RESET E CONFIGURAÇÕES GERAIS
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    /* ESSENCIAL: Garante que o padding não aumente a largura do elemento e vaze a tela */
+    box-sizing: border-box;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    /* Cor padrão do texto */
+    color: white;
+    /* Fonte personalizada */
+    font-family: "Bebas Neue", sans-serif;
+    /* Peso da fonte */
+    font-weight: 400;
+    /* Sem inclinação */
+    font-style: normal;
+    overflow-x: hidden;
+    /* Evita rolagem lateral */
+}
+
+/* =========================================
+   TEMAS (DARK / LIGHT)
+   ========================================= */
+
+/* --- TEMA DARK (Padrão) --- */
+body.dark-theme {
+    background-color: rgb(24, 23, 23);
+    color: white;
+}
+
+body.dark-theme .about h1.active,
+body.dark-theme .nome h1.active {
+    color: white;
+}
+
+body.dark-theme .about h1.active::after,
+body.dark-theme .nome h1.active::after {
+    background-color: white;
+}
+
+body.dark-theme .about h1:hover::after,
+body.dark-theme .nome h1:hover::after {
+    background-color: white;
+    width: 100%;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+body.dark-theme .header {
+    background-color: rgb(24, 23, 23);
+}
+
+body.dark-theme .background-text {
+    background-color: rgb(24, 23, 23);
+}
+
+body.dark-theme .title {
+    color: white;
+}
+
+body.dark-theme .subtitle {
+    color: white;
+}
+
+/* --- TEMA LIGHT --- */
+body.light-theme {
+    background-color: #D2D2D2;
+    color: black;
+}
+
+body.light-theme .about h1.active,
+body.light-theme .nome h1.active {
+    color: black;
+}
+
+body.light-theme .about h1.active::after,
+body.light-theme .nome h1.active::after {
+    background-color: black;
+}
+
+body.light-theme .about h1:hover::after,
+body.light-theme .nome h1:hover::after {
+    background-color: black;
+    width: 100%;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+body.light-theme .header {
+    background-color: #D2D2D2;
+}
+
+body.light-theme .nome {
+    color: black;
+}
+
+body.light-theme .darkmode {
+    color: black;
+}
+
+body.light-theme .background-text {
+    background-color: #D2D2D2;
+}
+
+body.light-theme .title {
+    color: black;
+}
+
+body.light-theme .subtitle {
+    color: black;
+}
+
+/* Ajuste da cor do cursor no modo Light */
+body.light-theme #animated-text {
+    border-right-color: black;
+}
+
+
+/* =========================================
+   ESTILOS DO CABEÇALHO (DESKTOP)
+   ========================================= */
+.header {
+    width: 100%;
+    height: auto;
+    background-color: rgb(24, 23, 23);
+    display: flex;
+    align-items: center;
+}
+
+.nome {
+    margin-right: auto;
+    padding: 2rem;
+    color: white;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+}
+
+.about {
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.about h1 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.about h1,
+.nome h1 {
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.about h1::after,
+.nome h1::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.about h1:hover::after,
+.nome h1:hover::after {
+    width: 100%;
+}
+
+.about h1.active::after,
+.nome h1.active::after {
+    width: 100%;
+}
+
+.about h1.active,
+.nome h1.active {
+    color: white;
+}
+
+.darkmode {
+    display: flex;
+    margin-left: auto;
+    padding: 2rem;
+    color: white;
+    gap: 1rem;
+    align-items: center;
+}
+
+.darkmode h1 {
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.darkmode h1::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.darkmode h1:hover::after {
+    width: 100%;
+}
+
+.darkmode h1.dark-active::after {
+    width: 100%;
+}
+
+.darkmode h1.dark-active {
+    color: white;
+}
+
+.lua {
+    width: 2rem;
+    height: auto;
+}
+
+
+/* =========================================
+   CONTEÚDO PRINCIPAL (DESKTOP)
+   ========================================= */
+.background-text {
+    width: 100%;
+    /* Altura ajustada para ocupar o que sobra da tela menos o header */
+    min-height: 80vh;
+    display: flex;
+    /* Garante que Título e Subtítulo fiquem lado a lado ou empilhados conforme necessidade */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Centraliza tudo verticalmente */
+    background-color: rgb(24, 23, 23);
+    text-align: center;
+}
+
+.title-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    padding: 0 2rem;
+    font-size: 15rem;
+    /* Ajustado um pouco para telas médias */
+    font-weight: bold;
+    line-height: 1;
+    color: white;
+    margin: 0;
+    /* Remove margem automática que bugava o layout */
+}
+
+.subtitle-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subtitle {
+    margin-top: 2rem;
+    /* Espaço fixo em vez de %, muito mais seguro */
+    padding: 0 2rem;
+    font-size: 3rem;
+    font-weight: 300;
+    color: white;
+}
+
+/* Animação de digitação */
+#animated-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: normal;
+    /* Permite quebrar linha em telas menores */
+    border-right: 3px solid white;
+    /* Cursor um pouco mais grosso */
+    padding-right: 5px;
+    animation: blink-cursor 0.7s steps(2, start) infinite;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+@keyframes blink-cursor {
+    from {
+        border-right-color: inherit;
+    }
+
+    /* Usa a cor do texto atual */
+    to {
+        border-right-color: transparent;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVIDADE (MOBILE E TABLET)
+   ========================================= */
+@media screen and (max-width: 900px) {
+
+    /* --- 1. CABEÇALHO (Layout Ajustado) --- */
+    .header {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 15px 20px;
+    }
+
+    /* Nome na esquerda */
+    .nome {
+        order: 1;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nome h1 {
+        font-size: 1.5rem;
+    }
+
+    /* Dark Mode na direita */
+    .darkmode {
+        order: 2;
+        padding: 0;
+        margin: 0;
+        gap: 8px;
+    }
+
+    .darkmode h1 {
+        font-size: 1rem;
+    }
+
+    .lua {
+        width: 1.2rem;
+    }
+
+    /* Menu embaixo */
+    .about {
+        width: 100%;
+        order: 3;
+        justify-content: center;
+        padding: 0;
+        margin-top: 15px;
+        gap: 20px;
+    }
+
+    .about h1 {
+        font-size: 1rem;
+    }
+
+
+    /* --- 2. CONTEÚDO PRINCIPAL (INDEX) --- */
+    .background-text {
+        height: auto;
+        /* Permite crescer se necessário */
+        min-height: 70vh;
+        /* Garante altura mínima */
+        padding: 2rem 0;
+        justify-content: center;
+        /* Centraliza no meio da tela */
+    }
+
+    /* Ajuste do Título Gigante */
+    .title {
+        font-size: 5rem;
+        /* Reduz de 15rem para 5rem para caber no celular */
+        line-height: 1;
+        padding: 0 1rem;
+        word-break: break-word;
+        /* Quebra a palavra se for muito longa */
+    }
+
+    /* Ajuste do Subtítulo */
+    .subtitle {
+        margin-top: 1.5rem;
+        /* Espaço proporcional */
+        font-size: 1.5rem;
+        /* Reduz para leitura confortável */
+        padding: 0 1.5rem;
+        line-height: 1.4;
+    }
+
+    /* Ajuste do cursor animado para mobile */
+    #animated-text {
+        border-right-width: 2px;
+        /* Cursor mais fino no mobile */
+    }
+}
+
+/* Ajuste para celulares muito pequenos */
+@media screen and (max-width: 380px) {
+    .title {
+        font-size: 4rem;
+    }
+
+    .header {
+        padding: 10px 15px;
+    }
+}
