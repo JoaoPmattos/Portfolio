@@ -516,7 +516,7 @@ body.light-theme .darkmode:hover .lua {
 
 .about {
     /* Centraliza o menu (truque do margin auto) */
-    position: absolute;
+    position: sticky;
     left: 50%;
     transform: translateX(-50%);
     display: flex;

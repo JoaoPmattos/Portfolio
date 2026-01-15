@@ -160,7 +160,7 @@ body.light-theme .darkmode:hover .lua {
 
 .about {
     /* Centraliza o menu (truque do margin auto) */
-    position: absolute;
+    position: sticky;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -312,7 +312,7 @@ body.light-theme .darkmode:hover .lua {
     width: 100%;
     height: 40vh;
     /* Altura fixa para manter padrão */
-    object-fit:contain;
+    object-fit: cover;
     /* Ajusta a imagem sem esticar */
     display: none;
     /* JS controla qual aparece */
@@ -391,12 +391,28 @@ body.light-theme .darkmode:hover .lua {
     font-size: 1rem;
     font-weight: 400;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .visit-btn:hover {
     background-color: white;
     color: rgb(24, 23, 23);
     transform: translateY(-3px);
+}
+
+/* ESTILO NOVO: BOTÃO ESTÁTICO (SEM LINK) */
+.visit-btn.static-btn {
+    cursor: default;
+    /* Cursor normal, não de clique */
+    pointer-events: none;
+    /* Garante que não haja interação */
+}
+
+.visit-btn.static-btn:hover {
+    /* Remove animação de hover */
+    background-color: transparent;
+    color: white;
+    transform: none;
 }
 
 
@@ -496,7 +512,7 @@ body.light-theme .darkmode:hover .lua {
 .modal-image {
     width: auto;
     height: auto;
-    max-width: 90vw;
+    max-width: 100vw;
     max-height: 80vh;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
