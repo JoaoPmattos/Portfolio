@@ -1,44 +1,65 @@
-// Seleciona os elementos do menu (About, Works, Contact) e o botão Dark Mode
+// Seletores
 const elementsWithBorder = document.querySelectorAll(".about h1, .nome h1");
-const darkElement = document.querySelector(".darkmode h1");
+const darkBtn = document.querySelector(".darkmode"); // Clique na div inteira
 const body = document.querySelector("body");
 const themeIcon = document.getElementById("theme-icon");
 
-// Inicializa o tema com base no estado inicial
+// Seletores de Idioma
+const langBtn = document.querySelector(".language-toggle h1"); // O texto do botão
+const langToggleDiv = document.querySelector(".language-toggle");
+const enTexts = document.querySelectorAll(".lang-en");
+const ptTexts = document.querySelectorAll(".lang-pt");
+
+// 1. Inicializa Tema
 function initializeTheme() {
+    // Verifica se tem preferência salva (opcional, aqui usa a classe do HTML)
     if (body.classList.contains("light-theme")) {
-        darkElement.textContent = "Light";
         themeIcon.src = "./icons/sun.svg";
     } else {
         body.classList.add("dark-theme");
-        darkElement.textContent = "Dark";
         themeIcon.src = "./icons/moon.svg";
     }
 }
-
 initializeTheme();
 
-// Adiciona o evento de clique para os itens do menu (excluindo o botão Dark)
+// 2. Lógica de Hover/Active no Menu
 elementsWithBorder.forEach(element => {
     element.addEventListener("click", () => {
-        // Remove a classe 'active' de todos os itens
         elementsWithBorder.forEach(el => el.classList.remove("active"));
-        // Adiciona a classe 'active' ao item clicado
         element.classList.add("active");
     });
 });
 
-// Alterna entre os temas Light e Dark ao clicar no botão Dark Mode
-darkElement.addEventListener("click", () => {
+// 3. Alternar Tema (Dark/Light)
+darkBtn.addEventListener("click", () => {
     if (body.classList.contains("dark-theme")) {
+        // Muda para Light
         body.classList.remove("dark-theme");
         body.classList.add("light-theme");
-        darkElement.textContent = "Light";
         themeIcon.src = "./icons/sun.svg";
     } else {
+        // Muda para Dark
         body.classList.remove("light-theme");
         body.classList.add("dark-theme");
-        darkElement.textContent = "Dark";
         themeIcon.src = "./icons/moon.svg";
+    }
+});
+
+// 4. Alternar Idioma (EN/PT)
+langToggleDiv.addEventListener("click", () => {
+    const isEnglish = langBtn.textContent === "BR"; // Se está mostrando BR, o site está em Inglês
+
+    if (isEnglish) {
+        // Mudar para Português
+        langBtn.textContent = "EN"; // Botão agora mostra opção de voltar pra inglês
+
+        enTexts.forEach(el => el.style.display = "none");
+        ptTexts.forEach(el => el.style.display = "inline"); // ou block dependendo do layout
+    } else {
+        // Mudar para Inglês
+        langBtn.textContent = "BR";
+
+        ptTexts.forEach(el => el.style.display = "none");
+        enTexts.forEach(el => el.style.display = "inline");
     }
 });

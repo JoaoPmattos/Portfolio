@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<link rel="stylesheet" href="./css/contact.css"> <!-- Mantém o mesmo CSS do Home -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - João Pedro | Contact</title>
+
+    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -17,43 +18,74 @@
             <a href="index.html" class="nome">
                 <h1>João Pedro</h1>
             </a>
+
             <div class="about">
                 <h1 class="About">
-                    <a href="about.html">About</a>
+                    <a href="about.html">
+                        <span class="lang-en">About</span>
+                        <span class="lang-pt" style="display: none;">Sobre</span>
+                    </a>
                 </h1>
                 <h1 class="Works">
-                    <a href="works.html">Works</a>
+                    <a href="works.html">
+                        <span class="lang-en">Works</span>
+                        <span class="lang-pt" style="display: none;">Trabalhos</span>
+                    </a>
                 </h1>
-                <h1 class="Contact">
-                    <a href="contact.html">Contact</a>
+                <h1 class="Contact active"> <a href="contact.html">
+                        <span class="lang-en">Contact</span>
+                        <span class="lang-pt" style="display: none;">Contato</span>
+                    </a>
                 </h1>
             </div>
-            <div class="darkmode">
-                <img class="lua" id="theme-icon" src="./icons/moon.svg" alt="">
-                <h1>Dark</h1>
+
+            <div class="actions-container">
+                <div class="language-toggle">
+                    <h1 id="lang-text">BR</h1>
+                </div>
+                <div class="darkmode">
+                    <img class="lua" id="theme-icon" src="./icons/moon.svg" alt="">
+                </div>
             </div>
         </div>
     </div>
 
     <div class="background-text">
         <div class="title-container">
-            <h1 class="title">Contact Me</h1> <!-- Título da página -->
+            <h1 class="title">
+                <span class="lang-en">Contact Me</span>
+                <span class="lang-pt" style="display: none;">Entre em Contato</span>
+            </h1>
+
             <div class="texto">
-                <p>I am eager to embrace new challenges and grow as a developer. Let's connect and create something
-                    amazing together! </p>
+                <p>
+                    <span class="lang-en">
+                        Driven by a passion for technology and continuous learning. I am ready to deliver high-quality
+                        web solutions and add real value to your team. Let's connect and build something impactful.
+                    </span>
+                    <span class="lang-pt" style="display: none;">
+                        Movido pela paixão por tecnologia e aprendizado contínuo. Estou pronto para entregar soluções
+                        web de alta qualidade e agregar valor real à sua equipe. Vamos nos conectar e construir algo
+                        impactante.
+                    </span>
+                </p>
             </div>
         </div>
+
         <div class="textoSocial">
-            <p>Check my Socials</p>
+            <p>
+                <span class="lang-en">Check my Socials</span>
+                <span class="lang-pt" style="display: none;">Minhas Redes</span>
+            </p>
             <span class="arrow-down">↓</span>
         </div>
+
         <div class="contact-container">
             <div class="icons-container">
                 <a href="mailto:joaopedro272004@hotmail.com" target="_blank" class="icon-link">
                     <img src="./icons/email.svg" alt="Email" class="contact-icon">
                 </a>
-                <a href="https://wa.me/5516997639135?text=Olá%2C%20visitei%20seu%20portfólio%20e%20fiquei%20interessado%20no%20seu%20trabalho.%20Podemos%20conversar%20mais%20sobre%20uma%20possível%20colaboração%3F
-                " target="_blank" class="icon-link">
+                <a href="https://wa.me/5516997639135" target="_blank" class="icon-link">
                     <img src="./icons/whatsapp.svg" alt="WhatsApp" class="contact-icon">
                 </a>
                 <a href="https://github.com/JoaoPmattos" target="_blank" class="icon-link">
@@ -65,6 +97,7 @@
             </div>
         </div>
     </div>
+
     <script src="JavaScriptContact.js"></script>
 </body>
 

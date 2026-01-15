@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<link rel="stylesheet" href="./css/about.css"> <!-- Mantém o mesmo CSS do Home -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - João Pedro | About</title>
+    <link rel="stylesheet" href="./css/about.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -18,37 +18,55 @@
                 <h1>João Pedro</h1>
             </a>
             <div class="about">
-                <h1 class="About">
-                    <a href="about.html">About</a>
-                </h1>
-                <h1 class="Works">
-                    <a href="works.html">Works</a>
-                </h1>
-                <h1 class="Contact">
-                    <a href="contact.html">Contact</a>
-                </h1>
+                <h1 class="About active"><a href="about.html"><span class="lang-en">About</span><span class="lang-pt"
+                            style="display: none;">Sobre</span></a></h1>
+                <h1 class="Works"><a href="works.html"><span class="lang-en">Works</span><span class="lang-pt"
+                            style="display: none;">Trabalhos</span></a></h1>
+                <h1 class="Contact"><a href="contact.html"><span class="lang-en">Contact</span><span class="lang-pt"
+                            style="display: none;">Contato</span></a></h1>
             </div>
-            <div class="darkmode">
-                <img class="lua" id="theme-icon" src="./icons/moon.svg" alt="">
-                <h1>Dark</h1>
+            <div class="actions-container">
+                <div class="language-toggle">
+                    <h1 id="lang-text">BR</h1>
+                </div>
+                <div class="darkmode"><img class="lua" id="theme-icon" src="./icons/moon.svg" alt=""></div>
             </div>
         </div>
     </div>
 
     <div class="background-text">
         <div class="title-container">
-            <h1 class="title">About Me</h1> <!-- Alterado para "About Me" -->
+            <h1 class="title">
+                <span class="lang-en">About Me</span>
+                <span class="lang-pt" style="display: none;">Sobre Mim</span>
+            </h1>
         </div>
         <div class="subtitle-container">
             <p class="subtitle">
-                I’m João Pedro, a Digital Designer with a passion for creating user-friendly designs.
-                This page is dedicated to sharing my journey, skills, and inspirations.
-            </p> <!-- Novo conteúdo da página About -->
+                <span class="lang-en">My name is João Pedro! I'm a Digital Designer who combines creativity and code. I
+                    create intuitive interfaces and immersive web experiences with a focus on usability and visual
+                    impact.</span>
+                <span class="lang-pt" style="display: none;">Meu nome é João Pedro! Sou um Designer Digital que une
+                    criatividade e código. Crio interfaces intuitivas e experiências web imersivas com foco em
+                    usabilidade e impacto visual.</span>
+            </p>
         </div>
+
+        <div class="quote-container">
+            <p class="quote">
+                <span class="lang-en">"Design is intelligence made visible."</span>
+                <span class="lang-pt" style="display: none;">"Design é inteligência tornada visível."</span>
+            </p>
+            <p class="author">— Alina Wheeler</p>
+        </div>
+
         <div class="arrow-bottom">↓</div>
         <div class="contatoContainer">
             <p class="contato">
-                <a href="contact.html">Contact Me</a>
+                <a href="contact.html">
+                    <span class="lang-en">Contact Me</span>
+                    <span class="lang-pt" style="display: none;">Contate-me</span>
+                </a>
             </p>
         </div>
     </div>

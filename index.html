@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<link rel="stylesheet" href="./css/index.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - João Pedro</title>
+
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -17,32 +18,57 @@
             <a href="index.html" class="nome">
                 <h1>João Pedro</h1>
             </a>
+
             <div class="about">
                 <h1 class="About">
-                    <a href="about.html">About</a>
+                    <a href="about.html">
+                        <span class="lang-en">About</span>
+                        <span class="lang-pt" style="display: none;">Sobre</span>
+                    </a>
                 </h1>
                 <h1 class="Works">
-                    <a href="works.html">Works</a> 
+                    <a href="works.html">
+                        <span class="lang-en">Works</span>
+                        <span class="lang-pt" style="display: none;">Trabalhos</span>
+                    </a>
                 </h1>
                 <h1 class="Contact">
-                    <a href="Contact">Contact</a>
+                    <a href="contact.html">
+                        <span class="lang-en">Contact</span>
+                        <span class="lang-pt" style="display: none;">Contato</span>
+                    </a>
                 </h1>
             </div>
-            <div class="darkmode">
-                <img class="lua" id="theme-icon" src="./icons/moon.svg" alt="">
-                <h1>Dark</h1>
+
+            <div class="actions-container">
+                <div class="language-toggle">
+                    <h1 id="lang-text">BR</h1>
+                </div>
+                <div class="darkmode">
+                    <img class="lua" id="theme-icon" src="./icons/moon.svg" alt="">
+                </div>
             </div>
         </div>
     </div>
 
     <div class="background-text">
         <div class="title-container">
-            <h1 class="title">Digital Designer</h1>
+            <h1 class="title">
+                <span class="lang-en">Digital Designer</span>
+                <span class="lang-pt" style="display: none;">Designer Digital</span>
+            </h1>
         </div>
+
         <div class="subtitle-container">
-            <p class="subtitle" id="animated-text">Specialized in Web Design, UX/UI, and Front End Development.</p>
+            <p class="subtitle" id="animated-text-en">
+                Specialized in Web Design, UX/UI, and Front End Development.
+            </p>
+            <p class="subtitle" id="animated-text-pt" style="display: none;">
+                Especializado em Web Design, UX/UI e Desenvolvimento Front End.
+            </p>
         </div>
     </div>
+
     <script src="JavaScriptHome.js"></script>
 </body>
 

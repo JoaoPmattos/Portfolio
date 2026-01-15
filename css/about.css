@@ -300,30 +300,43 @@ body.light-theme .background-text {
    ========================================= */
 @media screen and (max-width: 900px) {
 
-    /* --- Header Responsivo --- */
+    /* --- Header Responsivo CORRIGIDO --- */
     .header {
         width: 100%;
         flex-wrap: wrap;
         /* Permite quebrar linha */
         justify-content: space-between;
+        /* Espalha Nome e Ações */
         padding: 15px 20px;
+        position: relative;
+        /* Contexto de posicionamento */
     }
 
     .nome {
         padding: 0;
         margin: 0;
         order: 1;
+        /* Esquerda */
     }
 
     .nome h1 {
         font-size: 1.5rem;
     }
 
-    .darkmode {
+    /* O elemento da direita é .actions-container, não .darkmode */
+    .actions-container {
+        order: 2;
+        /* Direita */
         padding: 0;
         margin: 0;
-        order: 2;
-        gap: 8px;
+        gap: 1rem;
+        padding: 0 !important;
+    }
+
+    .darkmode {
+        /* Remove paddings extras do componente darkmode dentro do container */
+        padding: 0;
+        margin: 0;
     }
 
     .darkmode h1 {
@@ -336,7 +349,9 @@ body.light-theme .background-text {
 
     .about {
         width: 100%;
+        /* Ocupa linha inteira */
         order: 3;
+        /* Vai para baixo */
         justify-content: center;
         padding: 0;
         margin-top: 15px;
@@ -397,4 +412,141 @@ body.light-theme .background-text {
     .header {
         padding: 10px 15px;
     }
+}
+
+
+/* ... (MANTENHA TODO O SEU CSS DE RESET E TEMAS ANTERIOR AQUI) ... */
+
+/* =========================================
+   ESTILOS PARA IDIOMA E ALINHAMENTO (CIRCULAR)
+   ========================================= */
+
+.actions-container {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    gap: 1rem;
+    /* Espaço entre os dois círculos */
+    padding-right: 2rem;
+}
+
+/* --- ESTILO COMPARTILHADO (IDIOMA E TEMA) --- */
+.language-toggle,
+.darkmode {
+    cursor: pointer;
+
+    /* Tamanho do círculo */
+    width: 45px;
+    height: 45px;
+
+    /* Faz ficar redondo */
+    border-radius: 50%;
+
+    /* Borda que acompanha a cor do texto/ícone */
+    border: 2px solid currentColor;
+
+    /* Centraliza o conteúdo (Texto ou Ícone) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.3s ease;
+    margin: 0;
+    /* Garante que não tenha margens extras */
+    padding: 0;
+}
+
+/* Ajuste do texto dentro do círculo */
+.language-toggle h1 {
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+/* Ajuste do tamanho do ícone da lua/sol para caber no círculo */
+.lua {
+    width: 1.2rem;
+    height: auto;
+    transition: filter 0.3s ease;
+}
+
+/* Efeito Hover (Aumenta levemente) */
+.language-toggle:hover,
+.darkmode:hover {
+    transform: scale(1.1);
+}
+
+/* --- AJUSTES ESPECÍFICOS POR TEMA --- */
+
+/* === DARK MODE === */
+/* Cor padrão: Branco */
+body.dark-theme .language-toggle,
+body.dark-theme .darkmode {
+    color: white;
+    border-color: white;
+}
+
+/* Hover no Dark Mode: Fundo branco, conteúdo preto */
+body.dark-theme .language-toggle:hover,
+body.dark-theme .darkmode:hover {
+    background-color: white;
+    color: rgb(24, 23, 23);
+}
+
+/* Inverte a cor do ícone no hover para preto (já que o fundo fica branco) */
+body.dark-theme .darkmode:hover .lua {
+    filter: invert(1);
+}
+
+
+/* === LIGHT MODE === */
+/* Cor padrão: Preto */
+body.light-theme .language-toggle,
+body.light-theme .darkmode {
+    color: black;
+    border-color: black;
+}
+
+/* Hover no Light Mode: Fundo preto, conteúdo branco */
+body.light-theme .language-toggle:hover,
+body.light-theme .darkmode:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Inverte a cor do ícone no hover para branco (já que o fundo fica preto) */
+body.light-theme .darkmode:hover .lua {
+    filter: invert(1);
+}
+
+/* Estilo para links no header */
+.about h1 a,
+.nome h1 {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Opção 3: Quote --- */
+.quote-container {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.quote {
+    font-size: 2rem;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.author {
+    font-size: 1.2rem;
+    opacity: 0.6;
+}
+
+body.light-theme .quote,
+body.light-theme .author {
+    color: black;
 }

@@ -411,3 +411,164 @@ body.light-theme #animated-text {
         padding: 10px 15px;
     }
 }
+
+
+/* ... (MANTENHA O RESET E BODY/HTML DO SEU CÓDIGO ORIGINAL) ... */
+
+/* =========================================
+   ESTILOS PARA IDIOMA E ALINHAMENTO (CIRCULAR)
+   ========================================= */
+.actions-container {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    gap: 1rem;
+    padding-right: 2rem;
+}
+
+/* Estilo Compartilhado (Idioma e Tema) */
+.language-toggle,
+.darkmode {
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    margin: 0;
+    padding: 0;
+}
+
+.language-toggle h1 {
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.lua {
+    width: 1.2rem;
+    height: auto;
+    transition: filter 0.3s ease;
+}
+
+.language-toggle:hover,
+.darkmode:hover {
+    transform: scale(1.1);
+}
+
+/* --- AJUSTES POR TEMA (CORES) --- */
+
+/* Dark Mode */
+body.dark-theme .language-toggle,
+body.dark-theme .darkmode {
+    color: white;
+    border-color: white;
+}
+
+body.dark-theme .language-toggle:hover,
+body.dark-theme .darkmode:hover {
+    background-color: white;
+    color: rgb(24, 23, 23);
+}
+
+body.dark-theme .darkmode:hover .lua {
+    filter: invert(1);
+}
+
+/* Light Mode */
+body.light-theme .language-toggle,
+body.light-theme .darkmode {
+    color: black;
+    border-color: black;
+}
+
+body.light-theme .language-toggle:hover,
+body.light-theme .darkmode:hover {
+    background-color: black;
+    color: white;
+}
+
+body.light-theme .darkmode:hover .lua {
+    filter: invert(1);
+}
+
+/* =========================================
+   ESTILOS DO CABEÇALHO (GERAL)
+   ========================================= */
+.header {
+    width: 100%;
+    height: auto;
+    background-color: rgb(24, 23, 23);
+    display: flex;
+    align-items: center;
+}
+
+.nome {
+    margin-right: auto;
+    /* Empurra o resto para a direita */
+    padding: 2rem;
+    color: inherit;
+    text-decoration: none;
+}
+
+.about {
+    /* Centraliza o menu na tela (truque do margin auto nos dois lados num container flex) */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+}
+
+/* Se preferir sem position absolute (mais seguro pra responsivo): */
+/* .about { margin: 0 auto; display: flex; gap: 1rem; } */
+
+
+/* ... (MANTENHA OS EFEITOS DE HOVER DO MENU AQUI) ... */
+
+
+/* =========================================
+   RESPONSIVIDADE (MOBILE)
+   ========================================= */
+@media screen and (max-width: 900px) {
+    .header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 15px 20px;
+        position: relative;
+        /* Para o absolute do menu funcionar, se usar */
+    }
+
+    .nome {
+        order: 1;
+        margin: 0;
+        padding: 0;
+    }
+
+    .actions-container {
+        order: 2;
+        margin: 0;
+        padding: 0;
+        gap: 1rem;
+    }
+
+    .about {
+        position: static;
+        /* Remove centralização absoluta no mobile */
+        transform: none;
+        width: 100%;
+        order: 3;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    /* Ajuste do Texto Animado */
+    .subtitle {
+        font-size: 1.5rem;
+        padding: 0 1.5rem;
+    }
+}
